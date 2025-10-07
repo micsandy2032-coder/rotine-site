@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotine - Premium Ayurvedic Hair Care | Brndx</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #1a5c3a;
+            --light-green: #e8f5e9;
+            --medium-green: #4caf50;
+            --dark-green: #0d3d22;
+            --gold: #d4af37;
+            --light-gold: #f9f0d9;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9f6;
+            color: var(--text-dark);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .Brndx-link {
+            color: var(--light-gold);
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .Brndx-link:hover {
+            color: var(--gold);
+        }
+        
+        .Brndx-link i {
+            margin-left: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--text-light);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-btn {
+            background-color: var(--gold);
+            color: var(--primary-green);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .hero-btn:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Product Navigation */
+        .product-nav {
+            background-color: var(--light-green);
+            padding: 1.5rem 5%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .product-nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        
+        .product-nav li {
+            margin: 0.5rem 1rem;
+        }
+        
+        .product-nav a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            display: block;
+        }
+        
+        .product-nav a:hover, .product-nav a.active {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+        }
+        
+        /* Product Section */
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-green);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            background-color: var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: var(--primary-green);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-name {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-desc {
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .product-features {
+            margin-bottom: 1rem;
+        }
+        
+        .product-features li {
+            margin-bottom: 0.5rem;
+            color: #555;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-features li:before {
+            content: "✓";
+            color: var(--medium-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            flex-grow: 1;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        /* Product Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: var(--gold);
+        }
+        
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: var(--gold);
+        }
+        
+        .modal-body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .modal-image {
+            flex: 1 1 40%;
+            padding: 2rem;
+            background-color: var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-image img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .modal-info {
+            flex: 1 1 60%;
+            padding: 2rem;
+        }
+        
+        .modal-price {
+            font-size: 2rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .modal-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .modal-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-features h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-features ul {
+            padding-left: 1.5rem;
+        }
+        
+        .modal-features li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quantity-selector button {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .quantity-selector input {
+            width: 50px;
+            text-align: center;
+            margin: 0 1rem;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .buy-now-btn {
+            background-color: var(--gold);
+            color: var(--primary-green);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .buy-now-btn:hover {
+            background-color: var(--light-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 3rem 5%;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--primary-green);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-body {
+                flex-direction: column;
+            }
+            
+            .modal-image, .modal-info {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i> ROTINE
+            </a>
+            <a href="./index.html" class="Brndx-link">
+                Visit Brndx <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Premium Ayurvedic Hair Care</h1>
+        <p>Discover the power of nature with Rotine's range of hair care products. Formulated with traditional Ayurvedic ingredients to nourish, strengthen, and revitalize your hair.</p>
+        <a href="#products" class="hero-btn">Explore Products</a>
+    </section>
+    
+    <!-- Product Navigation -->
+    <nav class="product-nav">
+        <ul>
+            <li><a href="#all-products" class="active">All Products</a></li>
+            <li><a href="#serums">Serums</a></li>
+            <li><a href="#shots">Amla Shots</a></li>
+            <li><a href="#gel">Hair Gel</a></li>
+            <li><a href="#gummies">Gummies</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Products Section -->
+    <div class="products-container" id="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>Natural solutions for healthy, beautiful hair</p>
+        </div>
+        
+        <div class="products-grid" id="all-products">
+            <!-- Hair Nourishing Serum -->
+            <div class="product-card" data-category="serums">
+                <div class="product-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/ec15f7d1-7f10-49e4-b12c-6463d46a8a40_WhatsApp%20Image%202025-10-03%20at%2012.45.55_3f988329.jpg?auth_key=1791012098-918aa82e27a34cf4994e8e1ba0889e57-0-c90e37a61fb758350b11bc44bd371782" alt="Hair Nourishing Serum">
+                    <span class="product-badge">Bestseller</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Hair Nourishing Serum</h3>
+                    <p class="product-desc">Non-greasy ayurvedic daily hair nutrition for stronger, healthier hair.</p>
+                    <ul class="product-features">
+                        <li>Nourishes hair follicles</li>
+                        <li>Non-greasy formula</li>
+                        <li>Ayurvedic ingredients</li>
+                    </ul>
+                    <div class="product-price">$24.99</div>
+                    <div class="product-actions">
+                        <a href="#" class="btn-primary view-details" data-product="serum">View Details</a>
+                        <a href="#" class="btn-secondary buy-now" data-product="serum">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Amla Shots -->
+            <div class="product-card" data-category="shots">
+                <div class="product-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/90e4bae3-85b7-4979-bb0f-15d49d775e25_WhatsApp%20Image%202025-10-03%20at%2012.45.55_64d99fdb.jpg?auth_key=1791012098-856b51626bee41ee8e5056de5d3a7dc0-0-f94d4bf9106a94325c95528473cfd348" alt="Amla Shots">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Amla Shots for Hair Growth</h3>
+                    <p class="product-desc">Ayurvedic formula that strengthens, nourishes, and revitalizes your hair.</p>
+                    <ul class="product-features">
+                        <li>Promotes hair growth</li>
+                        <li>Strengthens hair roots</li>
+                        <li>14 shots per bottle</li>
+                    </ul>
+                    <div class="product-price">$29.99</div>
+                    <div class="product-actions">
+                        <a href="#" class="btn-primary view-details" data-product="shots">View Details</a>
+                        <a href="#" class="btn-secondary buy-now" data-product="shots">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Total Hair Care Gel -->
+            <div class="product-card" data-category="gel">
+                <div class="product-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/7e1b7b76-1ce1-41c3-8513-9177a3feee7a_WhatsApp%20Image%202025-10-03%20at%2012.45.56_1b17f88e.jpg?auth_key=1791012098-30292beba56144a987bb5b45c1f06048-0-bb8b64d7f783f83408a07ad7bcf4ba24" alt="Total Hair Care Gel">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Total Hair Care Gel</h3>
+                    <p class="product-desc">All-in-one solution that regrows, cleanses, conditions, and nourishes.</p>
+                    <ul class="product-features">
+                        <li>Regrows hair</li>
+                        <li>Cleanses & conditions</li>
+                        <li>With Amla, Bhringraj & Neem</li>
+                    </ul>
+                    <div class="product-price">$19.99</div>
+                    <div class="product-actions">
+                        <a href="#" class="btn-primary view-details" data-product="gel">View Details</a>
+                        <a href="#" class="btn-secondary buy-now" data-product="gel">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Amla Gummies -->
+            <div class="product-card" data-category="gummies">
+                <div class="product-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/6792a904-1f8d-4717-9956-d2849fa6c0eb_WhatsApp%20Image%202025-10-03%20at%2012.45.56_27b052a7.jpg?auth_key=1791012098-ff268f0dea81498f91018943f155847a-0-75b0f2f3401a5e6e6f5fc7ea0fa5783c" alt="Amla Gummies">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Amla Gummies</h3>
+                    <p class="product-desc">Delicious gummies that support hair growth, health, and strength.</p>
+                    <ul class="product-features">
+                        <li>Promotes hair growth</li>
+                        <li>Improves hair health</li>
+                        <li>Easy to consume</li>
+                    </ul>
+                    <div class="product-price">$22.99</div>
+                    <div class="product-actions">
+                        <a href="#" class="btn-primary view-details" data-product="gummies">View Details</a>
+                        <a href="#" class="btn-secondary buy-now" data-product="gummies">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hair Nourishing Serum with Box -->
+            <div class="product-card" data-category="serums">
+                <div class="product-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/c81ce992-53d5-4424-9e02-4f2b960f2712_WhatsApp%20Image%202025-10-03%20at%2012.45.56_dc3c88ea.jpg?auth_key=1791012098-ccc97c941f144d8a8b1d4f8de68c4013-0-01db314dff9d311b0cb8e793bef967ef" alt="Hair Nourishing Serum with Box">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Hair Nourishing Serum Gift Set</h3>
+                    <p class="product-desc">Premium gift set with nourishment in every drop for complete hair care.</p>
+                    <ul class="product-features">
+                        <li>Complete hair nutrition</li>
+                        <li>Non-greasy formula</li>
+                        <li>Perfect gift option</li>
+                    </ul>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-actions">
+                        <a href="#" class="btn-primary view-details" data-product="serum-gift">View Details</a>
+                        <a href="#" class="btn-secondary buy-now" data-product="serum-gift">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Product Details</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalName">Product Name</h3>
+                    <div class="modal-price" id="modalPrice">$0.00</div>
+                    <p class="modal-description" id="modalDescription">
+                        Product description will appear here.
+                    </p>
+                    <div class="modal-features">
+                        <h3>Key Benefits</h3>
+                        <ul id="modalFeatures">
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                        </ul>
+                    </div>
+                    <div class="quantity-selector">
+                        <button id="decreaseQty">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button id="increaseQty">+</button>
+                    </div>
+                    <button class="buy-now-btn" id="modalBuyNow">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Rotine</h3>
+                <p>Rotine brings you the power of Ayurveda for your hair care needs. Our products are formulated with natural ingredients to promote healthy, beautiful hair.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <p>Subscribe to our newsletter for exclusive offers and hair care tips.</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px;">
+                    <button type="submit" style="background-color: var(--gold); color: var(--primary-green); border: none; padding: 10px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Rotine. All Rights Reserved. A brand of <a href="./index.html" style="color: var(--gold);">Brndx</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Product data
+        const products = {
+            serum: {
+                name: "Hair Nourishing Serum",
+                price: "$24.99",
+                image: "https://z-cdn-media.chatglm.cn/files/ec15f7d1-7f10-49e4-b12c-6463d46a8a40_WhatsApp%20Image%202025-10-03%20at%2012.45.55_3f988329.jpg?auth_key=1791012098-918aa82e27a34cf4994e8e1ba0889e57-0-c90e37a61fb758350b11bc44bd371782",
+                description: "Our Hair Nourishing Serum is a non-greasy, ayurvedic daily hair nutrition solution that penetrates deep into hair follicles to provide essential nutrients. Formulated with traditional Ayurvedic ingredients, this serum strengthens hair from root to tip, reduces breakage, and promotes healthy growth.",
+                features: [
+                    "Nourishes hair follicles for stronger roots",
+                    "Non-greasy formula that absorbs quickly",
+                    "Contains traditional Ayurvedic herbs",
+                    "Suitable for all hair types",
+                    "Free from harmful chemicals and parabens"
+                ]
+            },
+            shots: {
+                name: "Amla Shots for Hair Growth",
+                price: "$29.99",
+                image: "https://z-cdn-media.chatglm.cn/files/90e4bae3-85b7-4979-bb0f-15d49d775e25_WhatsApp%20Image%202025-10-03%20at%2012.45.55_64d99fdb.jpg?auth_key=1791012098-856b51626bee41ee8e5056de5d3a7dc0-0-f94d4bf9106a94325c95528473cfd348",
+                description: "Our Amla Shots are concentrated doses of hair nutrition designed to promote rapid hair growth. Each shot contains the power of Amla (Indian Gooseberry) and other Ayurvedic herbs that strengthen hair follicles, reduce hair fall, and improve overall hair health.",
+                features: [
+                    "Promotes faster hair growth",
+                    "Strengthens hair from root to tip",
+                    "Reduces hair fall and breakage",
+                    "14 concentrated shots per bottle",
+                    "Ayurvedic formula with no side effects"
+                ]
+            },
+            gel: {
+                name: "Total Hair Care Gel",
+                price: "$19.99",
+                image: "https://z-cdn-media.chatglm.cn/files/7e1b7b76-1ce1-41c3-8513-9177a3feee7a_WhatsApp%20Image%202025-10-03%20at%2012.45.56_1b17f88e.jpg?auth_key=1791012098-30292beba56144a987bb5b45c1f06048-0-bb8b64d7f783f83408a07ad7bcf4ba24",
+                description: "Our Total Hair Care Gel is an all-in-one solution that eliminates the need for multiple hair products. This revolutionary gel regrows, cleanses, conditions, and nourishes your hair in one simple step. Formulated with Amla, Bhringraj, and Neem, it provides complete hair care without the hassle.",
+                features: [
+                    "All-in-one solution: no shampoo, conditioner, or oil needed",
+                    "Regrows hair and strengthens follicles",
+                    "Cleanses scalp and removes impurities",
+                    "Conditions and nourishes hair",
+                    "Contains Amla, Bhringraj, and Neem"
+                ]
+            },
+            gummies: {
+                name: "Amla Gummies",
+                price: "$22.99",
+                image: "https://z-cdn-media.chatglm.cn/files/6792a904-1f8d-4717-9956-d2849fa6c0eb_WhatsApp%20Image%202025-10-03%20at%2012.45.56_27b052a7.jpg?auth_key=1791012098-ff268f0dea81498f91018943f155847a-0-75b0f2f3401a5e6e6f5fc7ea0fa5783c",
+                description: "Our Amla Gummies make hair care delicious and convenient. These tasty gummies are packed with the goodness of Amla and other nutrients that support hair growth, health, and strength. Perfect for those who prefer an easy and enjoyable way to care for their hair.",
+                features: [
+                    "Delicious and easy to consume",
+                    "Supports hair growth and health",
+                    "Strengthens hair from within",
+                    "Made with natural ingredients",
+                    "Suitable for all ages"
+                ]
+            },
+            "serum-gift": {
+                name: "Hair Nourishing Serum Gift Set",
+                price: "$34.99",
+                image: "https://z-cdn-media.chatglm.cn/files/c81ce992-53d5-4424-9e02-4f2b960f2712_WhatsApp%20Image%202025-10-03%20at%2012.45.56_dc3c88ea.jpg?auth_key=1791012098-ccc97c941f144d8a8b1d4f8de68c4013-0-01db314dff9d311b0cb8e793bef967ef",
+                description: "Our premium Hair Nourishing Serum Gift Set is the perfect present for someone special or a treat for yourself. This elegant set includes our bestselling Hair Nourishing Serum in a beautiful packaging that reflects the quality of the product inside. Give the gift of healthy, beautiful hair.",
+                features: [
+                    "Premium gift packaging",
+                    "Includes 60ml Hair Nourishing Serum",
+                    "Complete hair nutrition in every drop",
+                    "Non-greasy ayurvedic formula",
+                    "Perfect for all hair types"
+                ]
+            }
+        };
+        
+        // DOM elements
+        const modal = document.getElementById('productModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalName = document.getElementById('modalName');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalFeatures = document.getElementById('modalFeatures');
+        const modalBuyNow = document.getElementById('modalBuyNow');
+        const closeBtn = document.querySelector('.close');
+        const quantityInput = document.getElementById('quantity');
+        const decreaseBtn = document.getElementById('decreaseQty');
+        const increaseBtn = document.getElementById('increaseQty');
+        
+        // Product navigation
+        const productNavLinks = document.querySelectorAll('.product-nav a');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active link
+                productNavLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter products
+                const category = this.getAttribute('href').substring(1);
+                
+                productCards.forEach(card => {
+                    if (category === 'all-products' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // View Details buttons
+        const viewDetailsBtns = document.querySelectorAll('.view-details');
+        
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productId = this.getAttribute('data-product');
+                openProductModal(productId);
+            });
+        });
+        
+        // Buy Now buttons
+        const buyNowBtns = document.querySelectorAll('.buy-now');
+        
+        buyNowBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productId = this.getAttribute('data-product');
+                openProductModal(productId);
+            });
+        });
+        
+        // Modal Buy Now button
+        modalBuyNow.addEventListener('click', function() {
+            const quantity = quantityInput.value;
+            const productName = modalName.textContent;
+            
+            // In a real application, this would add the product to a cart
+            alert(`${quantity} x ${productName} added to cart!`);
+            modal.style.display = 'none';
+        });
+        
+        // Quantity controls
+        decreaseBtn.addEventListener('click', function() {
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        });
+        
+        increaseBtn.addEventListener('click', function() {
+            if (quantityInput.value < 10) {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            }
+        });
+        
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Open product modal function
+        function openProductModal(productId) {
+            const product = products[productId];
+            
+            modalTitle.textContent = 'Product Details';
+            modalImage.src = product.image;
+            modalName.textContent = product.name;
+            modalPrice.textContent = product.price;
+            modalDescription.textContent = product.description;
+            
+            // Clear and populate features
+            modalFeatures.innerHTML = '';
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                modalFeatures.appendChild(li);
+            });
+            
+            // Reset quantity
+            quantityInput.value = 1;
+            
+            // Show modal
+            modal.style.display = 'block';
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
